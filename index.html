@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中文签名设计生成器</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入中文字体 (以免费字体为例) -->
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+QingKe+HuangYou&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>中文签名设计生成器</h1>
+        <div class="control-panel">
+            <input type="text" id="nameInput" placeholder="请输入您的中文姓名" maxlength="4">
+            <select id="fontSelect">
+                <option value="'ZCOOL QingKe HuangYou', cursive">毛笔行书</option>
+                <option value="'Ma Shan Zheng', cursive">仿宋楷体</option>
+                <option value="'Noto Sans SC', sans-serif">现代黑体</option>
+            </select>
+            <input type="color" id="colorPicker" value="#000000">
+            <button onclick="generateSignature()">生成签名</button>
+            <button onclick="downloadSignature()" id="downloadBtn" disabled>下载图片</button>
+        </div>
+        <div class="canvas-container">
+            <!-- 这是生成签名图片的画布 -->
+            <canvas id="signatureCanvas" width="800" height="300"></canvas>
+            <p class="hint">签名将在此处显示，点击上方“下载图片”按钮保存。</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
